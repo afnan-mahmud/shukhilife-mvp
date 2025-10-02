@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Redesign - WordPress Style</title>
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 100%);
+            min-height: 100vh;
+        }
+        .test-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .test-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1f2937;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        .status.info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+        .test-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #374151;
+        }
+        .code-block {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .feature-list li:before {
+            content: "✅ ";
+            margin-right: 0.5rem;
+        }
+        .test-link {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 24px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+        .test-link:hover {
+            background: #4338ca;
+        }
+        .test-link.green {
+            background: #059669;
+        }
+        .test-link.green:hover {
+            background: #047857;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .comparison-item {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .comparison-item.old {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        .comparison-item.new {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">🎉 Checkout Redesign - WordPress Style Complete!</h1>
+        
+        <div class="status success">
+            <strong>✅ Simplified Checkout</strong> - Removed unnecessary fields, added delivery location selector with dynamic shipping costs
+        </div>
+        
+        <div class="test-section">
+            <h3>🔄 Before vs After</h3>
+            <div class="comparison">
+                <div class="comparison-item old">
+                    <h4>❌ Old Checkout</h4>
+                    <ul>
+                        <li>Full Name</li>
+                        <li>Phone Number</li>
+                        <li>Alternative Phone</li>
+                        <li>Email Address</li>
+                        <li>Delivery Address</li>
+                        <li>Quantity</li>
+                        <li>Fixed pricing</li>
+                    </ul>
+                </div>
+                <div class="comparison-item new">
+                    <h4>✅ New Checkout</h4>
+                    <ul>
+                        <li>Full Name (Bengali placeholder)</li>
+                        <li>Phone Number (Bengali placeholder)</li>
+                        <li>Delivery Address (Bengali placeholder)</li>
+                        <li>Quantity</li>
+                        <li>Delivery Location Radio:</li>
+                        <li>  • ঢাকার মধ্যে (80৳)</li>
+                        <li>  • ঢাকার বাইরে (130৳)</li>
+                        <li>Real-time total calculation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎨 Frontend Features</h3>
+            <ul class="feature-list">
+                <li>WordPress-style simplicity with clean form design</li>
+                <li>Bengali placeholders for better user experience</li>
+                <li>Delivery location radio buttons with pricing</li>
+                <li>Real-time total calculation (product + shipping)</li>
+                <li>Green submit button with total amount display</li>
+                <li>Responsive design for mobile and desktop</li>
+                <li>Order summary with shipping breakdown</li>
+                <li>Proper error handling with user-friendly messages</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔧 Backend Features</h3>
+            <ul class="feature-list">
+                <li>Server-side price validation (security)</li>
+                <li>Delivery location validation</li>
+                <li>Shipping cost calculation (80৳ inside, 130৳ outside)</li>
+                <li>Total price verification against client</li>
+                <li>Delivery info stored in order notes</li>
+                <li>Updated validation for simplified fields</li>
+                <li>Phone number validation for Bangladeshi numbers</li>
+                <li>Round-robin assignment to support users</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Test Results</h3>
+            
+            <h4>✅ Inside Dhaka Order</h4>
+            <div class="code-block">
+POST /api/checkout
+{
+  "productId": "68dcdd60e8107684f8d6adbd",
+  "quantity": 2,
+  "customerName": "Test User",
+  "phone": "01712345678",
+  "address": "123 Test Street, Dhaka",
+  "deliveryLocation": "inside",
+  "shippingCost": 80,
+  "totalPrice": 1980
+}
+
+Response: 201 Created
+{
+  "success": true,
+  "invoice": "INV-20251001-5580",
+  "deliveryLocation": "inside",
+  "shippingCost": 80,
+  "totalPrice": 1980,
+  "assignedTo": {
+    "name": "Support User 2",
+    "email": "support2@test.com"
+  }
+}
+            </div>
+            
+            <h4>✅ Outside Dhaka Order</h4>
+            <div class="code-block">
+POST /api/checkout
+{
+  "productId": "68dcdd60e8107684f8d6adbd",
+  "quantity": 1,
+  "customerName": "Outside User",
+  "phone": "01712345679",
+  "address": "456 Outside Street, Chittagong",
+  "deliveryLocation": "outside",
+  "shippingCost": 130,
+  "totalPrice": 1080
+}
+
+Response: 201 Created
+{
+  "success": true,
+  "deliveryLocation": "outside",
+  "shippingCost": 130,
+  "totalPrice": 1080
+}
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 Acceptance Criteria - ALL MET</h3>
+            <ul class="feature-list">
+                <li>✅ Removed Alternative Phone and Email fields</li>
+                <li>✅ Kept only Name, Phone, Address (required)</li>
+                <li>✅ Added Delivery Location radio group</li>
+                <li>✅ Inside Dhaka: 80৳ shipping</li>
+                <li>✅ Outside Dhaka: 130৳ shipping</li>
+                <li>✅ Default selection: Inside Dhaka</li>
+                <li>✅ Real-time total calculation</li>
+                <li>✅ Bengali placeholders for better UX</li>
+                <li>✅ Server-side price validation</li>
+                <li>✅ WordPress-style clean design</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>🚀 Test the Implementation</h3>
+            <a href="http://localhost:5174/p/saffron" class="test-link green">
+                Test Product Landing Page
+            </a>
+            <a href="http://localhost:3000/api/products" class="test-link">
+                View Available Products
+            </a>
+            <a href="http://localhost:5174/admin/orders" class="test-link">
+                View Orders (Admin)
+            </a>
+        </div>
+        
+        <div class="status success">
+            <strong>🎉 Checkout redesign complete!</strong><br>
+            WordPress-style simplicity with dynamic shipping costs and Bengali localization.
+        </div>
+    </div>
+</body>
+</html>

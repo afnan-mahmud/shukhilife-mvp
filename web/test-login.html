@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .test-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .test-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1f2937;
+        }
+        .test-link {
+            display: block;
+            text-align: center;
+            padding: 12px 24px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: background 0.2s;
+        }
+        .test-link:hover {
+            background: #4338ca;
+        }
+        .test-info {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">Login Page Test</h1>
+        
+        <div class="test-info">
+            <strong>Test Credentials:</strong><br>
+            Admin: admin@ecommerce-lite.com / AdminPass123<br>
+            Support: support1@ecommerce-lite.com / SupportPass123<br>
+            Packaging: packaging@ecommerce-lite.com / PackagingPass123
+        </div>
+        
+        <a href="http://localhost:5173/login" class="test-link">
+            Open Login Page
+        </a>
+        
+        <a href="http://localhost:5173" class="test-link">
+            Open Home Page
+        </a>
+        
+        <div class="test-info">
+            <strong>Features to test:</strong><br>
+            • Modern glassmorphic design<br>
+            • Dark mode toggle (top-right)<br>
+            • Password visibility toggle<br>
+            • Inline validation errors<br>
+            • Loading states<br>
+            • Mobile responsiveness
+        </div>
+    </div>
+</body>
+</html>

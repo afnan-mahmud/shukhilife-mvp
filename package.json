@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-lite",
+  "version": "1.0.0",
+  "description": "Lightweight MERN stack application with Express server and Vite React client",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../web && npm install"
+  },
+  "keywords": ["mern", "express", "react", "vite", "mongodb"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

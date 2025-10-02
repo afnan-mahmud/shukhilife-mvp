@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global polish */
+:root { 
+  color-scheme: light dark; 
+}
+html, body, #root { 
+  height: 100%; 
+}
+body {
+  @apply bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 antialiased;
+}
+
+/* Optional: nicer scrollbars in dark */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(113 113 122) transparent; /* zinc-500 */
+}
+
+input, textarea, select {
+  background-color: #ffffff !important; /* white background */
+  color: #333 !important;              /* dark text */
+  border: 1px solid #ddd !important;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #2c7744;  /* your green primary */
+  box-shadow: 0 0 0 2px rgba(44, 119, 68, 0.2);
+}
+
